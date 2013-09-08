@@ -11,5 +11,8 @@ setup(name='webtrack',
     install_requires=['lxml >= 3.0',
                       'cssselect'],
     packages=['webtrack'],
-    scripts=['bin/webtrack']
+    entry_points="""
+        [console_scripts]
+        webtrack = webtrack.feed:main
+    """
 )
