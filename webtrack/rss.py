@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+import lxml.etree
+from lxml.builder import E
 
 def build_rss(title, link, items):
     """ Create Simple RSS feed from a list of items.
@@ -10,8 +12,6 @@ def build_rss(title, link, items):
     :returns: string that contains the rss feed
 
     """
-    import lxml.etree
-    from lxml.builder import E
 
     root = lxml.etree.Element('rss', version="2.0")
     channel = lxml.etree.SubElement(root, 'channel')
