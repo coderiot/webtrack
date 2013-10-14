@@ -9,7 +9,7 @@ Keep track of changes to any website.
 
 ## Installation
 ```sh
-$ pip install -e git+https://github.com/peterrr/webtrack.git#egg=webtrack
+$ pip install -e git+https://github.com/coderiot/webtrack.git#egg=webtrack
 ```
 
 ## Usage
