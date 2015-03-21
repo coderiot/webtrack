@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 import argparse
-import urllib2
+import urllib.request
 
 import lxml.html
 
@@ -21,7 +21,7 @@ def make(url, selector, guesser=guess.SimpleGuesser(), limit=0):
     :returns: formatted rss 2.0 feed of selected elements.
 
     """
-    doc = lxml.html.parse(urllib2.urlopen(url))
+    doc = lxml.html.parse(urllib.request.urlopen(url))
     root = doc.getroot()
     root.make_links_absolute()
 
@@ -50,9 +50,10 @@ def make(url, selector, guesser=guess.SimpleGuesser(), limit=0):
     feed = rss.build_rss(feed_title, url, items)
 
     return lxml.etree.tostring(feed,
-                              pretty_print=True,
-                              xml_declaration=True,
-                              encoding='utf-8')
+                               pretty_print=True,
+                               xml_declaration=True,
+                               encoding='utf-8')
+
 
 def main():
     parser = argparse.ArgumentParser("Create a RSS feed from every website.")
@@ -71,10 +72,10 @@ def main():
 
     args = parser.parse_args()
 
-    print make(args.url,
-                    selector=args.selector,
-                    limit=args.limit,
-                    )
+    print(make(args.url,
+               args.selector,
+               limit=args.limit,
+               ))
 
 
 if __name__ == '__main__':
