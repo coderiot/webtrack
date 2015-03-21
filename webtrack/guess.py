@@ -85,4 +85,4 @@ class SimpleGuesser(Guesser):
         :returns: the whole etree element as a string
 
         """
-        return lxml.etree.tostring(elem)
+        return lxml.etree.tostring(elem, encoding='unicode')
