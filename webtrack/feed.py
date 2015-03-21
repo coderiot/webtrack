@@ -6,8 +6,8 @@ import urllib.request
 
 import lxml.html
 
-import guess
-import rss
+import webtrack.guess as guess
+import webtrack.rss as rss
 
 
 def make(url, selector, guesser=guess.SimpleGuesser(), limit=0):
