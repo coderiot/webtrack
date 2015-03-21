@@ -75,7 +75,7 @@ def main():
     print(make(args.url,
                args.selector,
                limit=args.limit,
-               ))
+               ).decode('utf-8'))
 
 
 if __name__ == '__main__':
